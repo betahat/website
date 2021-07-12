@@ -17,6 +17,11 @@ social:
   - icon: github
     icon_pack: fab
     link: https://github.com/mthomas7
+  - display:
+      header: false
+    link: media/cv_thomas.pdf
+    icon_pack: ai
+    icon: cv
 organizations:
   - name: Ithaca College
     url: http://ithaca.edu
