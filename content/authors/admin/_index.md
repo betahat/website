@@ -19,7 +19,7 @@ social:
     link: https://github.com/mthomas7
 organizations:
   - name: Ithaca College
-    url: ithaca.edu
+    url: http://ithaca.edu
 education:
   courses:
     - course: PhD, Mathematics
