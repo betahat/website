@@ -14,7 +14,7 @@ social:
     link: https://scholar.google.com/citations?user=BiK7h4AAAAAJ
   - icon: github
     icon_pack: fab
-    link: https://github.com/gcushen
+    link: https://github.com/mthomas7
   - icon: linkedin
     icon_pack: fab
     link: https://www.linkedin.com/
