@@ -1,10 +1,11 @@
 ---
 role: Associate Professor, Mathematics
-bio: ""
+bio: My research is in the measurement and analysis of educational data,
+  particularly in undergraduate mathematics.
 interests:
-  - Artificial Intelligence
-  - Computational Linguistics
-  - Information Retrieval
+  - Undergraduate Mathematics Education Research
+  - Psychometrics
+  - Structural Equation Modeling
 social:
   - icon: envelope
     icon_pack: fas
