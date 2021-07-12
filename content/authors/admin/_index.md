@@ -21,19 +21,19 @@ organizations:
     url: ithaca.edu
 education:
   courses:
-    - course: PhD in Artificial Intelligence
-      institution: Stanford University
-      year: 2012
-    - course: MEng in Artificial Intelligence
-      institution: Massachusetts Institute of Technology
+    - course: PhD, Mathematics
+      institution: University of Arizona
+      year: 2013
+    - course: MS, Mathematics
+      institution: University of Arizona
       year: 2009
-    - course: BSc in Artificial Intelligence
-      institution: Massachusetts Institute of Technology
-      year: 2008
+    - course: BA, Mathematics
+      institution: Cornell University
+      year: 2006
 superuser: true
 highlight_name: false
 title: Matt Thomas
-email: ""
+email: mthomas7@ithaca.edu
 ---
 I do stuff
 
