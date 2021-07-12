@@ -1,5 +1,6 @@
 ---
 role: Associate Professor, Mathematics
+avatar_filename: avatar.jpg
 bio: My research is in the measurement and analysis of educational data,
   particularly in undergraduate mathematics.
 interests:
