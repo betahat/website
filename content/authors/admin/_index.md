@@ -43,4 +43,4 @@ email: mthomas7@ithaca.edu
 ---
 My background is in undergraduate mathematics education, particularly issues of measurememt and assessment. I am currently interested in how structural equation modeling and causal inference can be brought into the education research landscape.
 
-{{< icon name="download" pack="fas" >}} Download my {{< staticref "assets/media/cv_thomas.pdf" "newtab" >}}CV{{< /staticref >}}.
+{{< icon name="download" pack="fas" >}} Download my {{< staticref "uploads/cv_thomas.pdf" "newtab" >}}CV{{< /staticref >}}.
