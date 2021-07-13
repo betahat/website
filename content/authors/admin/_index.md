@@ -19,7 +19,7 @@ social:
     link: https://github.com/mthomas7
   - display:
       header: false
-    link: media/cv_thomas.pdf
+    link: assets/media/cv_thomas.pdf
     icon_pack: ai
     icon: cv
 organizations:
