@@ -41,6 +41,6 @@ highlight_name: false
 title: Matt Thomas
 email: mthomas7@ithaca.edu
 ---
-I do stuff
+My background is in undergraduate mathematics education, particularly issues of measurememt and assessment. I am currently interested in how structural equation modeling and causal inference can be brought into the education research landscape.
 
-{{< icon name="download" pack="fas" >}} Download my {{< staticref "uploads/demo_resume.pdf" "newtab" >}}resumé{{< /staticref >}}.
+{{< icon name="download" pack="fas" >}} Download my {{< staticref "media/cv_thomas.pdf" "newtab" >}}CV{{< /staticref >}}.
