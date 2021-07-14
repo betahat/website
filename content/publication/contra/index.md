@@ -31,9 +31,9 @@ publication_short: JMA
 abstract: In American contra dance, dance composers create dances that conform to the musical structure of a standard fiddle tune from a discrete set of dance figures. While anecdotal evidence suggests traditional and modern dances feature different patterns of dance figures, we seek to systematically explore similarities and differences between dances composed in various time periods through quantitative analysis, including artificial neural nets. In this corpus study, we use the dances performed at the Ralph Page Legacy Weekend between 1999 and 2014. While the neural nets did not always accurately predict the epoch in which a dance was composed among this small data set, misclassifications illuminated similarities and differences between dance epochs and suggest alternative methodologies for future research.
 
 # Summary. An optional shortened abstract.
-summary:
+summary: A paper
 
-tags: ["contra dance", "machine learning"]
+tags:
 
 # Display this page in the Featured widget?
 featured: true
@@ -64,8 +64,7 @@ image:
 #   Simply enter your project's folder or file name without extension.
 #   E.g. `internal-project` references `content/project/internal-project/index.md`.
 #   Otherwise, set `projects: []`.
-projects:
-- Analyis of Contra Dance
+projects: []
 
 # Slides (optional).
 #   Associate this publication with Markdown slides.
