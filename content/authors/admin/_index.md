@@ -17,6 +17,9 @@ social:
   - icon: github
     icon_pack: fab
     link: https://github.com/mthomas7
+  - icon: researchgate
+    icon_pack: fab
+    link: https://www.researchgate.net/profile/Matt-Thomas-7
   - display:
       header: false
     link: uploads/cv_thomas.pdf
