@@ -26,12 +26,12 @@ publication_types: ["2"]
 
 # Publication name and optional abbreviated publication name.
 publication: Journal of Mathematics and the Arts
-publication_short: JMA
+publication_short: Journal of Mathematics and the Arts
 
 abstract: In American contra dance, dance composers create dances that conform to the musical structure of a standard fiddle tune from a discrete set of dance figures. While anecdotal evidence suggests traditional and modern dances feature different patterns of dance figures, we seek to systematically explore similarities and differences between dances composed in various time periods through quantitative analysis, including artificial neural nets. In this corpus study, we use the dances performed at the Ralph Page Legacy Weekend between 1999 and 2014. While the neural nets did not always accurately predict the epoch in which a dance was composed among this small data set, misclassifications illuminated similarities and differences between dance epochs and suggest alternative methodologies for future research.
 
 # Summary. An optional shortened abstract.
-summary: A paper
+summary:
 
 tags:
 
@@ -55,7 +55,7 @@ url_video: ''
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder.
 image:
-  caption: 'Image credit: [**Unsplash**](https://unsplash.com/photos/pLCdAaMFLTE)'
+  caption: ''
   focal_point: ""
   preview_only: false
 
@@ -73,13 +73,3 @@ projects: []
 #   Otherwise, set `slides: ""`.
 slides:
 ---
-
-{{% callout note %}}
-Click the *Cite* button above to demo the feature to enable visitors to import publication metadata into their reference management software.
-{{% /callout %}}
-
-{{% callout note %}}
-Create your slides in Markdown - click the *Slides* button to check out the example.
-{{% /callout %}}
-
-Supplementary notes can be added here, including [code, math, and images](https://wowchemy.com/docs/writing-markdown-latex/).
