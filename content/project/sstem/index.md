@@ -1,6 +1,6 @@
 ---
 title: S-STEM
-summary: The Distributed Open Education Network
+summary: NSF funded program
 tags:
 date: "2016-04-27T00:00:00Z"
 
