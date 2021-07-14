@@ -1,19 +1,20 @@
 ---
-title: "Using stylistic features to predict the composition date of an American contra dance"
+title: "Computing as a Mathematical Disciplinary Practice"
 
 # Authors
 # If you created a profile for a user (e.g. the default `admin` user), write the username (folder name) here
 # and it will be replaced with their full name and linked to their profile.
 authors:
-- Peebles, C
+- Lockwood, E
+- DeJarnette, A
 - Thomas, M
 
 # Author notes (optional)
 author_notes: []
 
 
-date: "2021-06-17T00:00:00Z"
-doi: "10.1080/17513472.2021.1926780"
+date: "2019-06-01T00:00:00Z"
+doi: "10.1016/j.jmathb.2019.01.004"
 
 # Schedule page publish date (NOT publication's date).
 publishDate: "2017-01-01T00:00:00Z"
@@ -25,10 +26,10 @@ publishDate: "2017-01-01T00:00:00Z"
 publication_types: ["2"]
 
 # Publication name and optional abbreviated publication name.
-publication: Journal of Mathematics and the Arts
-publication_short: Journal of Mathematics and the Arts
+publication: The Journal of Mathematical Behavior
+publication_short: The Journal of Mathematical Behavior
 
-abstract: In American contra dance, dance composers create dances that conform to the musical structure of a standard fiddle tune from a discrete set of dance figures. While anecdotal evidence suggests traditional and modern dances feature different patterns of dance figures, we seek to systematically explore similarities and differences between dances composed in various time periods through quantitative analysis, including artificial neural nets. In this corpus study, we use the dances performed at the Ralph Page Legacy Weekend between 1999 and 2014. While the neural nets did not always accurately predict the epoch in which a dance was composed among this small data set, misclassifications illuminated similarities and differences between dance epochs and suggest alternative methodologies for future research.
+abstract: In this paper, we make a case for computing as a mathematical disciplinary practice. We present results from interviews with research mathematicians in which they reflected on the use of computing in their professional work. We draw on their responses to present evidence that computing is an inherent part of doing mathematics and is a practice they want their students to develop. We also discuss the mathematicians’ perspectives on how they learned and teach computing, and we suggest that much needs to be explored about how to teach computing effectively. Our overarching goal is to draw attention to the importance of the teaching and learning of computing, and we argue that it is an imperative topic of study in mathematics education research.
 
 # Summary. An optional shortened abstract.
 summary:
@@ -36,7 +37,7 @@ summary:
 tags:
 
 # Display this page in the Featured widget?
-featured: true
+featured: false
 
 # Custom links (uncomment lines below)
 # links:
@@ -64,7 +65,7 @@ image:
 #   Simply enter your project's folder or file name without extension.
 #   E.g. `internal-project` references `content/project/internal-project/index.md`.
 #   Otherwise, set `projects: []`.
-projects: [contra]
+projects: []
 
 # Slides (optional).
 #   Associate this publication with Markdown slides.
