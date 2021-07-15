@@ -34,6 +34,8 @@ abstract: Introducing Hardy-Weinberg equilibrium into the high school or college
 summary:
 
 tags:
+- Education
+- Biology
 
 # Display this page in the Featured widget?
 featured: false

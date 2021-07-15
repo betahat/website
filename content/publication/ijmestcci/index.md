@@ -37,9 +37,10 @@ abstract: Concept inventories have become increasingly common in STEM discipline
 summary:
 
 tags:
+- Education
 
 # Display this page in the Featured widget?
-featured: false
+featured: true
 
 # Custom links (uncomment lines below)
 # links:
@@ -67,7 +68,7 @@ image:
 #   Simply enter your project's folder or file name without extension.
 #   E.g. `internal-project` references `content/project/internal-project/index.md`.
 #   Otherwise, set `projects: []`.
-projects: []
+projects: [cci]
 
 # Slides (optional).
 #   Associate this publication with Markdown slides.

@@ -3,6 +3,7 @@ title: Contra Dance
 summary: Using machine learning to understand contra dance
 tags:
 - Machine Learning
+- Dance
 date: "2016-04-27T00:00:00Z"
 
 # Optional external URL for project (replaces project detail page).

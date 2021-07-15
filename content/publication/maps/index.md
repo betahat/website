@@ -37,7 +37,7 @@ abstract: One goal of an undergraduate education in mathematics is to help stude
 summary:
 
 tags:
-- Student Learning
+- Education
 
 # Display this page in the Featured widget?
 featured: false

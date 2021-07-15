@@ -27,8 +27,10 @@ content:
   filter_button:
   - name: All
     tag: '*'
-  - name: Student Learning
-    tag: Student Learning
+  - name: Education
+    tag: Education
+  - name: Contra Dance
+    tag: Dance
   - name: Machine Learning
     tag: Machine Learning
   - name: Other

@@ -34,6 +34,8 @@ abstract: In American contra dance, dance composers create dances that conform t
 summary:
 
 tags:
+- Machine Learning
+- Dance
 
 # Display this page in the Featured widget?
 featured: true

@@ -34,6 +34,8 @@ abstract: Concept inventories have become increasingly common in STEM discipline
 summary:
 
 tags:
+- Education
+- Videos
 
 # Display this page in the Featured widget?
 featured: false

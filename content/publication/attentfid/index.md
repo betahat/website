@@ -38,7 +38,8 @@ abstract:
 summary:
 
 tags:
-- Student Learning
+- Education
+- Videos
 
 # Display this page in the Featured widget?
 featured: false
