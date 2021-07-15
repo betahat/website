@@ -46,6 +46,10 @@ email: mthomas7@ithaca.edu
 ---
 My background is in undergraduate mathematics education, particularly issues of measurement and assessment. I am currently interested in how structural equation modeling and causal inference can be brought into the education research landscape.
 
+I teach a variety of statistics courses in addition to courses like probability, linear algebra, and calculus.
+
+I am a big proponent of free and open source software, specifically R and linux.
+
 My official department website is [here](https://www.ithaca.edu/faculty/mthomas7).
 
 {{< icon name="download" pack="fas" >}} Download my {{< staticref "uploads/cv_thomas.pdf" "newtab" >}}CV{{< /staticref >}}.
