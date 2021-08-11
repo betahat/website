@@ -48,7 +48,7 @@ My background is in undergraduate mathematics education, particularly issues of 
 
 I teach a variety of statistics courses in addition to courses like probability, linear algebra, and calculus.
 
-I am a big proponent of free and open source software, specifically R and linux.
+I am a big proponent of free and open source software, especially the statistical language R.
 
 My official department website is [here](https://www.ithaca.edu/faculty/mthomas7).
 
