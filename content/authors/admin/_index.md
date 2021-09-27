@@ -20,6 +20,9 @@ social:
   - icon: researchgate
     icon_pack: fab
     link: https://www.researchgate.net/profile/Matt-Thomas-7
+  - icon: linkedin
+    icon-pack: fab
+    link: https://www.linkedin.com/in/matt-thomas-7bb121221/
   - display:
       header: false
     link: uploads/cv_thomas.pdf
