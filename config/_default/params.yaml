@@ -33,10 +33,10 @@ coordinates:
   latitude: ''
   longitude: ''
 directions:
-office_hours:
-  - 'By appointment during the summer'
+#office_hours:
+#  - 'By appointment during the summer'
 
-appointment_url: 'https://calendly.com/matt-thomas/meeting'
+#appointment_url: 'https://calendly.com/matt-thomas/meeting'
 contact_links:
 
 
