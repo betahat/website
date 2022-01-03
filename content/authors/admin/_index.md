@@ -16,7 +16,7 @@ social:
     link: https://scholar.google.com/citations?user=BiK7h4AAAAAJ
   - icon: github
     icon_pack: fab
-    link: https://github.com/mthomas7
+    link: https://github.com/stats-matt
   - icon: researchgate
     icon_pack: fab
     link: https://www.researchgate.net/profile/Matt-Thomas-7
