@@ -27,8 +27,8 @@ social:
     icon_pack: ai
     icon: cv
 organizations:
-  - name: Ithaca College
-    url: http://ithaca.edu
+  - name: Cornell Statistical Consulting Unit, Cornell University
+    url: cscu.cornell.edu
 education:
   courses:
     - course: PhD, Mathematics
