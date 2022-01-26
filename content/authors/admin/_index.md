@@ -1,12 +1,10 @@
 ---
-role: Associate Professor, Mathematics
+role: Statistical Consultant
 avatar_filename: avatar.jpg
-bio: My research is in the measurement and analysis of educational data,
-  particularly in undergraduate mathematics.
-interests:
-  - Undergraduate Mathematics Education Research
-  - Psychometrics
-  - Structural Equation Modeling
+bio: Me
+# interests:
+#   - Psychometrics
+#   - Structural Equation Modeling
 social:
   - icon: envelope
     icon_pack: fas
