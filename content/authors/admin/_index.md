@@ -28,7 +28,7 @@ social:
     icon: cv
 organizations:
   - name: Cornell Statistical Consulting Unit, Cornell University
-    url: cscu.cornell.edu
+    url: http://cscu.cornell.edu
 education:
   courses:
     - course: PhD, Mathematics
@@ -45,13 +45,13 @@ highlight_name: false
 title: Matt Thomas
 email: mthomas@cornell.edu
 ---
-<!-- My background is in undergraduate mathematics education, particularly issues of measurement and assessment. I am currently interested in how structural equation modeling and causal inference can be brought into the education research landscape.
+I am a statistical consultant at the Cornell Statistical Consulting unit. My background is in mathematics education, particularly in issues of measurement and assessment.
 
-I teach a variety of statistics courses in addition to courses like probability, linear algebra, and calculus.
+I have taught a variety of statistics courses in addition to courses like probability, linear algebra, and calculus.
 
 I am interested in free and open-source software, especially the statistical language R.
 
-My official department website is [here](https://www.ithaca.edu/faculty/mthomas7).
+<!-- My official department website is [here](https://www.ithaca.edu/faculty/mthomas7). -->
 
-{{< icon name="download" pack="fas" >}} Download my {{< staticref "uploads/cv_thomas.pdf" "newtab" >}}CV{{< /staticref >}}.
+<!-- {{< icon name="download" pack="fas" >}} Download my {{< staticref "uploads/cv_thomas.pdf" "newtab" >}}CV{{< /staticref >}}.
 -->
