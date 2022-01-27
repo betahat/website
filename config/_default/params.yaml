@@ -20,19 +20,19 @@ twitter: ''
 
 # Contact (edit or remove options as required)
 
-email: mthomas7@ithaca.edu
-phone: 607 274-1826
-address:
-  street: Williams 208, 953 Danby Rd
-  city: Ithaca
-  region: NY
-  postcode: '14850'
-  country: United States
-  country_code: US
-coordinates:
-  latitude: ''
-  longitude: ''
-directions:
+# email: mthomas7@ithaca.edu
+#phone: 607 274-1826
+# address:
+#   street: Williams 208, 953 Danby Rd
+#   city: Ithaca
+#   region: NY
+#   postcode: '14850'
+#   country: United States
+#   country_code: US
+# coordinates:
+#   latitude: ''
+#   longitude: ''
+# directions:
 #office_hours:
 #  - 'By appointment during the summer'
 
