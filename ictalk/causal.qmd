@@ -1,0 +1,558 @@
+---
+title: "Causal Inference and Statistical Consulting"
+title-slide-attributes:
+  data-background-image: ./logo.png
+  data-background-size: 17%
+  data-background-position: 0% 0%
+subtitle: "Cornell Statistical Consulting Unit <br> https://cscu.cornell.edu"
+institute: "mthomas@cornell.edu"
+author: "Matt Thomas"
+date: "3/27/23"
+format: 
+  revealjs:
+    incremental: false
+    toc: true
+    theme: cscu.scss
+    toc-depth: 1
+    slide-number: true
+    logo: logo.png
+    margin: 0.2
+    chalkboard: true
+    fig.align: center
+    filters:
+      - ./center-images.lua
+---
+
+## Goals
+
+- Talk a little bit about causal inference
+- Talk a little bit about statistical consulting
+
+## Let’s Start With Pasta
+
+![](images/screen1.png)
+
+::: footer
+https://www.methodsman.com/blog/pasta-bmi-and-simpsons-paradox
+:::
+
+## 
+
+![](images/g1.png)
+
+::: footer
+https://www.methodsman.com/blog/pasta-bmi-and-simpsons-paradox
+:::
+
+## Weight categories: Simpson's paradox
+
+![](images/simp1.png)
+
+::: footer
+https://www.methodsman.com/blog/pasta-bmi-and-simpsons-paradox
+:::
+
+## Taking a step back
+
+What does it really mean for A to *cause* B?
+
+## Some possible interpretations
+
+- When A happens, B happens
+- When A happens, B is more/less likely to happen
+
+## Sprious correlations
+
+![](images/spur.png)
+
+::: footer
+https://tylervigen.com/view_correlation?id=1703 
+:::
+
+## Some possible interpretations
+
+- When A happens, B happens
+- When A happens, B is more/less likely to happen
+- B relies on A (at least in part) to determine its value
+
+---
+
+![](images/fisher.png)
+
+https://www.york.ac.uk/depts/maths/histstat/smoking.htm
+https://priceonomics.com/why-the-father-of-modern-statistics-didnt-believe/
+
+---
+
+![](images/cancer.png)
+
+## A "Toy" Example
+
+- Suppose you’re interested in the effects of taking vitamins on blood pressure
+- You collect some (observational) data, and find that people who take vitamins every day have, on average, lower blood pressure
+- What’s the story here?
+
+<!-- ## Brainstorming -->
+
+<!-- What might prevent us from making causal claims from collected data? -->
+
+## Observational studies vs experimental studies
+
+![](images/xkcd.png)
+
+::: footer
+https://xkcd.com/552/
+:::
+
+## Experiments
+
+- Why not just run an experiment?
+  - Ethics
+  - Practicality
+  - Cost
+  - Sometimes not even possible – e.g. fairness studies, weather studies like forest fires
+
+## Hill Criteria[^1] {.scrollable}
+
+::: {.r-fit-text}
+- Strength (effect size): A small association does not mean that there is not a causal effect, though the larger the association, the more likely that it is causal.
+- Consistency (reproducibility): Consistent findings observed by different persons in different places with different samples strengthens the likelihood of an effect.
+- Specificity: Causation is likely if there is a very specific population at a specific site and disease with no other likely explanation. The more specific an association between a factor and an effect is, the bigger the probability of a causal relationship.
+- Temporality: The effect has to occur after the cause (and if there is an expected delay between the cause and expected effect, then the effect must occur after that delay).
+- Biological gradient (dose-response relationship): Greater exposure should generally lead to greater incidence of the effect. However, in some cases, the mere presence of the factor can trigger the effect. In other cases, an inverse proportion is observed: greater exposure leads to lower incidence.
+- Plausibility: A plausible mechanism between cause and effect is helpful (but Hill noted that knowledge of the mechanism is limited by current knowledge).
+- Coherence: Coherence between epidemiological and laboratory findings increases the likelihood of an effect. However, Hill noted that "... lack of such [laboratory] evidence cannot nullify the epidemiological effect on associations".
+- Experiment: "Occasionally it is possible to appeal to experimental evidence".
+- Analogy: The use of analogies or similarities between the observed association and any other associations.
+:::
+
+[^1]:https://en.wikipedia.org/wiki/Bradford_Hill_criteria 
+
+## Interventions vs Conditioning
+
+- Intervening means you are (at least hypothetically) intervening, or setting a variable to a value
+- Conditioning means we are restricting what we’re looking at to a specific group/outcome
+
+## Claims and Reality
+
+- In reality, we might want to be able to do an intervention / experiment, but we can’t
+- We often make watered-down causal claims because of this[^1]
+
+[^1]:(Grosz et al., 2020)
+
+## Let's look at actual code examples
+
+Data are houses in Saratoga Springs
+
+## Predicting price
+
+```{r}
+library(tidyverse)
+library(broom)
+library(gtsummary)
+options(scipen = 999)
+SaratogaHouses <- mosaicData::SaratogaHouses
+```
+
+```{r}
+#| echo: true
+SaratogaHouses %>%
+  lm(data = ., price ~ bedrooms) %>%
+  tbl_regression()
+```
+
+. . .
+
+```{r}
+#| echo: true
+SaratogaHouses %>%
+  lm(data = ., price ~ bedrooms + livingArea) %>%
+  tbl_regression()
+```
+
+##
+
+```{r}
+SaratogaHouses$house_size <-
+  cut_number(SaratogaHouses$livingArea, 4)
+
+SaratogaHouses %>%
+  ggplot(aes(
+    x = livingArea,
+    y = price,
+    color = factor(bedrooms)
+  )) +
+  geom_point() +
+  geom_smooth(method = "lm", se = F)
+```
+
+##
+
+```{r}
+SaratogaHouses %>%
+  ggplot(aes(x = bedrooms, y = price, color = house_size)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = F)
+```
+
+
+## If you remember one thing:
+
+Controlling for *everything* without thinking about it is dangerous
+
+. . .
+
+(in the previous examples, adding extra predictors improved the model, we'll see examples in a bit where the opposite is true)
+
+## Causal Inference as a collection of tools
+
+- *Directed acyclic graphs (DAGs)*
+- Do-calculus
+- Propensity scores
+- Matching
+
+## DAGs
+
+Directed
+
+Acyclic
+
+Graphs
+
+## Consider a study
+
+Suppose we want to study the relationship between smoking and FEV
+
+. . .
+
+What variables might we want to include?
+
+## Actual study variables
+
+![](images/study_vars.png)
+
+How could we set up a DAG for these? (Take a second to draw one for yourself)
+
+::: footer
+(Cummiskey et al., 2020)
+:::
+
+---
+
+![](images/dag1.png)
+
+::: footer
+(Cummiskey et al., 2020)
+:::
+
+## Types of Relations in DAGs
+
+- Chains
+- Forks
+- Colliders
+
+## Chains
+
+![](images/chain1.png)
+
+## Chains
+
+![](images/chain2.png)
+
+## Forks
+
+![](images/fork1.png)
+
+## Colliders
+
+![](images/collider.png)
+
+## Why Care About This?
+
+:::: {.columns}
+
+::: {.column width="60%"}
+- Say we have a chain:
+  - C depends on B, which depends on A
+  - This means C (probably) depends on A
+- What if we condition on B?
+:::
+
+::: {.column width="40%"}
+![](images/chain1.png)
+:::
+
+::::
+
+
+## Chain Example
+
+:::: {.columns}
+
+::: {.column width="40%"}
+![](images/chainex.png)
+:::
+
+::: {.column width="60%"}
+- Condition on Blood Pressure, so we look at people with only a specific blood pressure
+- Heart Attack and Salt Intake are *conditionally independent* given Blood Pressure
+:::
+
+::::
+
+## Let's simulate this
+
+![](images/chainex2.png)
+
+::: footer
+(Lübke et. al, 2020)
+:::
+
+##
+
+```{r}
+#| echo: true
+
+set.seed(123456) # Reproducibility
+n <- 1000 # Sample Size
+learning <- rnorm(n)
+knowing <- 5 * learning + rnorm(n)
+understanding <- 3 * knowing + rnorm(n)
+```
+
+##
+
+```{r}
+#| echo: true
+lm(understanding ~ learning) %>% tbl_regression()
+```
+
+. . .
+
+```{r}
+#| echo: true
+lm(understanding ~ knowing) %>% tbl_regression()
+```
+
+##
+
+```{r}
+#| echo: true
+lm(understanding ~ learning + knowing) %>% tbl_regression()
+```
+
+## Fork Example
+
+:::: {.columns}
+
+::: {.column width="40%"}
+![](images/forkex.png)
+:::
+
+::: {.column width="60%"}
+- Ice cream sales and crime rate are correlated
+- What if we condition on temperature?
+
+:::
+
+::::
+
+## Fork simulation
+
+![](images/forkex2.png)
+
+
+(This is Simpson's paradox)
+
+::: footer
+(Lübke et. al, 2020)
+:::
+
+##
+
+```{r}
+#| echo: true
+set.seed(123456) # Reproducibility
+n <- 1000 # Sample Size
+intelligence <- rnorm(n, mean = 100, sd = 15)
+learning.time <- 200 - intelligence + rnorm(n)
+test.score <- 0.5 * intelligence + 0.1 * learning.time + rnorm(n)
+```
+
+##
+
+```{r}
+#| echo: true
+
+lm(test.score ~ learning.time) %>% tbl_regression()
+```
+
+. . .
+
+```{r}
+#| echo: true
+lm(test.score ~ learning.time + intelligence) %>% tbl_regression()
+```
+
+
+## Collider Example
+
+:::: {.columns}
+
+::: {.column width="40%"}
+![](images/colliderex.png)
+:::
+
+::: {.column width="60%"}
+Using this diagram, are weight and smoking independent conditioned on (or given) Cholesterol?
+
+:::
+
+::::
+
+## Another Collider Example
+
+- Getting the flu and chicken pox are independent
+- Both lead to a fever
+- Are they independent if we condition on having a fever?
+
+## Simulated collider
+
+![](images/colliderex2.png)
+
+(Berkson’s paradox)
+
+::: footer
+(Lübke et. al, 2020)
+:::
+
+##
+
+```{r}
+#| echo: true
+set.seed(123456) # Reproducibility
+n <- 1000 # Sample Size
+network <- rnorm(n)
+competence <- rnorm(n)
+promotion <- ((network > 1) | (competence > 1))
+```
+
+##
+
+```{r}
+#| echo: true
+lm(competence ~ network) %>% tbl_regression()
+```
+
+. . .
+
+```{r}
+#| echo: true
+lm(competence ~ network + promotion) %>% tbl_regression()
+```
+
+##
+
+```{r}
+#| echo: true
+lm(competence ~ network, subset = (promotion == 1)) %>% tbl_regression()
+```
+
+##
+
+- These independences lead to testable theories, in that we can test the graph
+- We could also create a set of all graphs which are compatible with the data
+
+## Backdoor Criteria
+
+To figure out what we should condition on:
+From X to Y:
+Find a set so that it contains no descendants of X, and blocks every path between X and Y that contains an arrow into X
+
+## Examples - Effect of X on Y?
+
+![](images/wdag1.png)
+
+::: footer
+https://medium.data4sci.com/causal-inference-part-xi-backdoor-criterion-e29627a1da0e
+:::
+
+## What if we want to condition on W?
+
+![](images/wdag2.png)
+
+::: footer
+https://medium.data4sci.com/causal-inference-part-xi-backdoor-criterion-e29627a1da0e
+:::
+
+---
+
+![](images/wdag3.png)
+
+::: footer
+https://medium.data4sci.com/causal-inference-part-xi-backdoor-criterion-e29627a1da0e
+:::
+
+---
+
+![](images/wdag4.png)
+
+::: footer
+https://medium.data4sci.com/causal-inference-part-xi-backdoor-criterion-e29627a1da0e
+:::
+
+---
+
+![](images/dag1.png)
+
+::: footer
+(Cummiskey et al., 2020)
+:::
+
+## Smoking -> Cardiac Arrest
+
+![](images/smoking.png)
+
+::: footer
+https://cran.r-project.org/web/packages/ggdag/vignettes/intro-to-dags.html
+:::
+
+---
+
+![](images/dag2.png)
+
+---
+
+![](images/dag3.png)
+
+## Moral of the Story
+
+Conditioning on everything can lead to unbiased estimates, or worse, even the wrong conclusions (like Simpson’s paradox)
+
+---
+
+![](images/quote.png)
+
+(Rohrer, 2018)
+
+## Pearl and Mackenzie, The Book of Why
+
+![](images/fi.jpg)
+
+## What does a statistical consultant do?
+
+- Meet with clients to work with them on their analysis
+- Help clients design experiments
+- Work with clients on their explanations of statistical methods
+- Give workshops on particular statistical topics
+
+## What topics come up?
+
+- Graphing
+- Mixed models
+- Generalized linear models
+- Path analysis / SEM / mediation / moderation
+- Bayesian methods
+- Software issues
+
+## Questions?
