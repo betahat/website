@@ -23,7 +23,7 @@ social:
     link: https://www.linkedin.com/in/matt-thomas-7bb121221/
   - display:
       header: false
-    link: uploads/cv_thomas.pdf
+    link: uploads/cv_thomas.html
     icon_pack: ai
     icon: cv
 organizations:
